@@ -3,13 +3,12 @@ require_once __DIR__ . "/trait/prezzo.php";
 
 class Prodotti
 {
-  use Prezzo;
+  public $prezzo;
   public $codice;
   public $titolo;
   public $genere;
   public $secondaManoPercentuale;
   public $prezzoSecondaMano;
-}
 
   function __construct($_codice, $_titolo, $_genere)
     {
@@ -19,11 +18,10 @@ class Prodotti
     }
 
 
-  public function scontoSecondaMano(){
-     $this->$prezzoSecondaMano = $this->prezzo * $this->$secondaManoPercentuale / 100;
-     return $this->$prezzoSecondaMano;
+  function scontoSecondaMano($_prezzo, $_percentualeSconto){
+     return $this->prezzoSecondaMano = $_prezzo -(($_prezzo * $_percentualeSconto) / 100);
    }
-
+ }
 
 
   class dvd extends Prodotti
