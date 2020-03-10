@@ -1,14 +1,11 @@
 <?php
-require_once __DIR__ . '/classes/prodotti.php';
+require_once "prodotti.php";
 
-$Interstellar = new dvd();
-
+$Interstellar = new dvd('AR230','Interstellar','Fantascienza');
 
 $Interstellar->anno = '2018';
-$Interstellar->codice = 'AR230';
-$Interstellar->titolo = 'Interstellar';
-$Interstellar->genere = 'fantascienza';
-$Interstellar->prezzo = 30;
+$Interstellar->secondaManoPercentuale = 20;
+$Interstellar->scontoSecondaMano();
 
 var_dump($Interstellar);
 ?>
